@@ -42,8 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstracts\ICategoryDal.cs" />
+    <Compile Include="Abstracts\ICourseDal.cs" />
+    <Compile Include="Abstracts\IInstructorDal.cs" />
     <Compile Include="Concretes\CategoryDal.cs" />
-    <Compile Include="Concretes\DemeoContext.cs" />
+    <Compile Include="Concretes\CourseDal.cs" />
+    <Compile Include="Concretes\DemoContext.cs" />
+    <Compile Include="Concretes\InstructorDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

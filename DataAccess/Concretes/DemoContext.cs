@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concretes
 {
-    public class DemeoContext
+    public class DemoContext
     {
         public List<Category> Categories { get; set; }
         public List<Course> Courses { get; set; }
         public List<Instructor> Instructors { get; set; }
-        public DemeoContext()
+        public DemoContext()
         {
             Categories = categories;
             Courses = courses;

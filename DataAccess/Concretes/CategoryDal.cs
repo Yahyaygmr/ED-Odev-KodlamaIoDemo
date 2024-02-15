@@ -13,7 +13,7 @@ namespace DataAccess.Concretes
 
         public void Delete(int id)
         {
-            DemeoContext context = new DemeoContext();
+            DemoContext context = new DemoContext();
 
             var category = context.Categories.Where(x => x.CategoryId == id).FirstOrDefault();
             context.Categories.Remove(category);
@@ -21,28 +21,28 @@ namespace DataAccess.Concretes
 
         public List<Category> GetAll()
         {
-            DemeoContext context = new DemeoContext();
+            DemoContext context = new DemoContext();
 
             return context.Categories.ToList();
         }
 
         public Category GetById(int id)
         {
-            DemeoContext context = new DemeoContext();
+            DemoContext context = new DemoContext();
 
             return context.Categories.Where(x => x.CategoryId == id).FirstOrDefault();
         }
 
         public void Insert(Category category)
         {
-            DemeoContext context = new DemeoContext();
+            DemoContext context = new DemoContext();
 
             context.Categories.Add(category);
         }
 
         public void Update(Category category)
         {
-            DemeoContext context = new DemeoContext();
+            DemoContext context = new DemoContext();
             var ctgr = context.Categories.Where(x => x.CategoryId == category.CategoryId).FirstOrDefault();
             context.Categories.Remove(ctgr);
 
