@@ -12,7 +12,7 @@ namespace DataAccess.Abstracts
         List<Category> GetAll();
         void Insert(Category category);
         void Update(Category category);
-        void Delete(Category category);
+        void Delete(int id);
         Category GetById(int id);
     }
 }

@@ -11,10 +11,11 @@ namespace DataAccess.Concretes
     public class CategoryDal : ICategoryDal
     {
 
-        public void Delete(Category category)
+        public void Delete(int id)
         {
             DemeoContext context = new DemeoContext();
 
+            var category = context.Categories.Where(x => x.CategoryId == id).FirstOrDefault();
             context.Categories.Remove(category);
         }
 
@@ -42,12 +43,15 @@ namespace DataAccess.Concretes
         public void Update(Category category)
         {
             DemeoContext context = new DemeoContext();
+            var ctgr = context.Categories.Where(x => x.CategoryId == category.CategoryId).FirstOrDefault();
+            context.Categories.Remove(ctgr);
 
             Category categoryYeni = new Category()
             {
                 CategoryId = category.CategoryId,
                 Name = category.Name
             };
+            context.Categories.Add(categoryYeni);
         }
     }
 }
