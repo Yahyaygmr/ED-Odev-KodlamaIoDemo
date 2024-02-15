@@ -41,11 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstracts\ICategoryDal.cs" />
+    <Compile Include="Concretes\CategoryDal.cs" />
+    <Compile Include="Concretes\DemeoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Abstracts\" />
-    <Folder Include="Concretes\" />
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{1F20D3A6-9A03-4C30-975A-54FF105A0B45}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
