@@ -27,11 +27,12 @@ namespace DataAccess.Concretes
             };
         public static List<Instructor> instructors = new List<Instructor>
         {
+            new Instructor(){InstructorId=1,Name="Engin Demiroğ", ImageUrl="Deneme"}
 
         };
         public static List<Course> courses = new List<Course>
         {
-
+            new Course() {CourseId=1,ImageUrl="Deneme", Name="2024 yazılım geliştirici yetiştirme kampı(C#)",CategoryId=1,InstructorId=1,CompletionRate="80"}
         };
     }
 }
