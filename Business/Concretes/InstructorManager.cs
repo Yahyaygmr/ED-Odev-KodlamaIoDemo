@@ -1,4 +1,5 @@
 ﻿using Business.Abstracts;
+using DataAccess.Abstracts;
 using DataAccess.Concretes;
 using Entities.Concretes;
 using System;
@@ -11,30 +12,36 @@ namespace Business.Concretes
 {
     public class InstructorManager : IInstructorService
     {
-        InstructorDal instructorDal = new InstructorDal();
+        private readonly IInstructorDal _instructorDal;
+
+        public InstructorManager(IInstructorDal insructorDal)
+        {
+            _instructorDal = insructorDal;
+        }
+
         public void TDelete(int id)
         {
-            instructorDal.Delete(id);
+            _instructorDal.Delete(id);
         }
 
         public List<Instructor> TGetAll()
         {
-            return instructorDal.GetAll();
+            return _instructorDal.GetAll();
         }
 
         public Instructor TGetById(int id)
         {
-            return instructorDal.GetById(id);
+            return _instructorDal.GetById(id);
         }
 
         public void TInsert(Instructor instructor)
         {
-            instructorDal.Insert(instructor);
+            _instructorDal.Insert(instructor);
         }
 
         public void TUpdate(Instructor instructor)
         {
-            instructorDal.Update(instructor);
+            _instructorDal.Update(instructor);
         }
     }
 }

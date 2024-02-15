@@ -1,4 +1,7 @@
-﻿using DataAccess.Concretes;
+﻿using Business.Abstracts;
+using Business.Concretes;
+using DataAccess.Abstracts;
+using DataAccess.Concretes;
 using Entities.Concretes;
 using System;
 using System.Collections.Generic;
@@ -39,6 +42,21 @@ namespace KodlamaIoDemo
             categoryDal2.Update(category3);
             var newList = categoryDal2.GetAll();
             foreach (var item in newList)
+            {
+                Console.WriteLine("Category Id: " + item.CategoryId + "  Category :" + item.Name);
+            }
+            //Business Layer
+            Console.WriteLine("---------------------Business Katmanı Sonrası------------------");
+            ICategoryService categoryService = new CategoryManager(new CategoryDal());
+            Category category5 = new Category()
+            {
+                CategoryId = 5,
+                Name = "Sql Server"
+            };
+            categoryService.TInsert(category5);
+
+            var list2 = categoryService.TGetAll();
+            foreach (var item in list2)
             {
                 Console.WriteLine("Category Id: " + item.CategoryId + "  Category :" + item.Name);
             }

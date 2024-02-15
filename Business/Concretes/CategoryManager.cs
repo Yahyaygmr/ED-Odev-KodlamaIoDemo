@@ -1,4 +1,5 @@
 ﻿using Business.Abstracts;
+using DataAccess.Abstracts;
 using DataAccess.Concretes;
 using Entities.Concretes;
 using System;
@@ -11,30 +12,36 @@ namespace Business.Concretes
 {
     public class CategoryManager : ICategoryService
     {
-        CategoryDal categoryDal = new CategoryDal();
+        private readonly ICategoryDal _categoryDal;
+
+        public CategoryManager(ICategoryDal categoryDal)
+        {
+            _categoryDal = categoryDal;
+        }
+
         public void TDelete(int id)
         {
-            categoryDal.Delete(id);
+            _categoryDal.Delete(id);
         }
 
         public List<Category> TGetAll()
         {
-            return categoryDal.GetAll();
+            return _categoryDal.GetAll();
         }
 
         public Category TGetById(int id)
         {
-            return categoryDal.GetById(id);
+            return _categoryDal.GetById(id);
         }
 
         public void TInsert(Category category)
         {
-            categoryDal.Insert(category);
+            _categoryDal.Insert(category);
         }
 
         public void TUpdate(Category category)
         {
-            categoryDal.Update(category);
+            _categoryDal.Update(category);
         }
     }
 }
