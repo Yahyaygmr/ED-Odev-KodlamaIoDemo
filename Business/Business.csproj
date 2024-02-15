@@ -41,11 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstracts\IBasicCrudService.cs" />
+    <Compile Include="Abstracts\ICategoryService.cs" />
+    <Compile Include="Abstracts\ICourseService.cs" />
+    <Compile Include="Abstracts\IInstructorService.cs" />
+    <Compile Include="Concretes\CategoryManager.cs" />
+    <Compile Include="Concretes\CourseManager.cs" />
+    <Compile Include="Concretes\InstructorManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Concretes\" />
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{61DD6335-CB6C-47B1-914C-B8E5E3FBCB55}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{1F20D3A6-9A03-4C30-975A-54FF105A0B45}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

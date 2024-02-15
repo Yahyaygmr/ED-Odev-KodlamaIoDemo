@@ -48,7 +48,11 @@ namespace DataAccess.Concretes
             Course courseYeni = new Course()
             {
                 CourseId = course.CourseId,
-                Name = course.Name
+                Name = course.Name,
+                ImageUrl = course.ImageUrl,
+                CompletionRate = course.CompletionRate,
+                CategoryId = course.CategoryId,
+                InstructorId = course.InstructorId
             };
             context.Courses.Add(courseYeni);
         }

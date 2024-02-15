@@ -48,7 +48,9 @@ namespace DataAccess.Concretes
             Instructor instructorYeni = new Instructor()
             {
                 InstructorId = instructor.InstructorId,
-                Name = instructor.Name
+                Name = instructor.Name,
+                ImageUrl = instructor.ImageUrl,
+                Courses = instructor.Courses
             };
             context.Instructors.Add(instructorYeni);
         }
